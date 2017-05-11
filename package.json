@@ -50,6 +50,7 @@
     "zone.js": "^0.7.8"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0-rc.4"
+    "@angular/cli": "^1.0.0-rc.4",
+    "underscore": "^1.8.3"
   }
 }

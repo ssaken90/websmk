@@ -1,20 +1,20 @@
 using System.Threading.Tasks;
-using vega.Core; 
+using vega.Core;
 
 namespace vega.Persistence
 {
-  public class UnitOfWork : IUnitOfWork
-  {
-    private readonly VegaDbContext context;
-
-    public UnitOfWork(VegaDbContext context)
+    public class UnitOfWork : IUnitOfWork
     {
-      this.context = context;
-    }
+        private readonly VegaDbContext context;
 
-    public async Task CompleteAsync()
-    {
-      await context.SaveChangesAsync();
+        public UnitOfWork(VegaDbContext context)
+        {
+            this.context = context;
+        }
+
+        public async Task CompleteAsync()
+        {
+            await context.SaveChangesAsync();
+        }
     }
-  }
 }

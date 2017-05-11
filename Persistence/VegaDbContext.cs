@@ -11,14 +11,14 @@ namespace vega.Persistence
         public DbSet<Feature> Features { get; set; }
         public DbSet<Photo> Photos { get; set; }
 
-        public VegaDbContext(DbContextOptions<VegaDbContext> options) 
+        public VegaDbContext(DbContextOptions<VegaDbContext> options)
           : base(options)
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<VehicleFeature>().HasKey(vf => 
+            modelBuilder.Entity<VehicleFeature>().HasKey(vf =>
               new { vf.VehicleId, vf.FeatureId });
         }
     }
